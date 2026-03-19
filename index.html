@@ -17,8 +17,8 @@
 
     <script>
         function checkTemp(){
-                var temperature = document.getElementById("howhot").value;
-                var humidity = document.getElementById("howhumid").value;
+                var temperature = Number(document.getElementById("howhot").value);
+                var humidity = Number(document.getElementById("howhumid").value);
                 var message = "";
                 var heatindex = temperature + (0.33 * humidity) - 4;
 
@@ -41,7 +41,7 @@
                     default:
                         message = "Temperature could not be determined.";
                 }
-                alert(message);
+            alert(message);
             }
     </script>
     
