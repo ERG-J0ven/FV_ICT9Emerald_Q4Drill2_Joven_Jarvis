@@ -20,47 +20,28 @@
                 var temperature = document.getElementById("howhot").value;
                 var humidity = document.getElementById("howhumid").value;
                 var message = "";
+                var heatindex = temperature + (0.33 * humidity) - 4;
 
                 switch(true){
-                    case(temperature < 24):
+                    case(heatindex <= 27):
                     message = "Cool";
                     break;
-                    case(temperature <= 27):
+                    case(heatindex <= 32 ):
                     message = "Warm";
                     break;
-                    case(temperature <= 31):
+                    case(heatindex <= 37):
                     message = "Hot";
                     break;
-                    case(temperature <= 35):
+                    case(heatindex <= 41):
                     message = "Very Hot";
                     break;
-                    case(temperature => 36):
+                    case(heatindex => 42):
                     message = "Extreme heat";
                     break;
                     default:
                         message = "Temperature could not be determined.";
                 }
                 alert(message);
-
-                switch(true){
-                    case(humidity< 24):
-                    message = "Cool";
-                    break;
-                    case(humidity <= 27):
-                    message = "Warm";
-                    break;
-                    case(temperature <= 31):
-                    message = "Hot";
-                    break;
-                    case(temperature <= 35):
-                    message = "Very Hot";
-                    break;
-                    case(temperature => 36):
-                    message = "Extreme heat";
-                    break;
-                    default:
-                        message = "Temperature could not be determined.";
-                }
             }
     </script>
     
