@@ -10,7 +10,7 @@
     <div>
         <h2>Heat Index Checker</h2>
         <input type="text" id="howhot" class="form-control" placeholder="Input degree value (C)">
-        <input type="text" id="howhumid" class="form-control" placeholder="Input degree value (C)">
+        <input type="text" id="howhumid" class="form-control" placeholder="Input humidity value (%)">
         <br>
         <button class="btn btn-info" onclick="checkTemp()">Check</button>
     </div>
@@ -22,24 +22,46 @@
                 var message = "";
 
                 switch(true){
-                    case(rank === "1st"):
-                    message = "Champions!";
+                    case(temperature < 24):
+                    message = "Cool";
                     break;
-                    case(rank === "2nd"):
-                    message = "second Placer!";
+                    case(temperature <= 27):
+                    message = "Warm";
                     break;
-                    case(rank === "3rd"):
-                    message = "Third Placer!";
+                    case(temperature <= 31):
+                    message = "Hot";
                     break;
-                    case(rank === "4th"):
-                    message = "Last Place!";
+                    case(temperature <= 35):
+                    message = "Very Hot";
+                    break;
+                    case(temperature => 36):
+                    message = "Extreme heat";
                     break;
                     default:
-                        message = "Rankings could not be determined.";
+                        message = "Temperature could not be determined.";
                 }
                 alert(message);
+
+                switch(true){
+                    case(humidity< 24):
+                    message = "Cool";
+                    break;
+                    case(humidity <= 27):
+                    message = "Warm";
+                    break;
+                    case(temperature <= 31):
+                    message = "Hot";
+                    break;
+                    case(temperature <= 35):
+                    message = "Very Hot";
+                    break;
+                    case(temperature => 36):
+                    message = "Extreme heat";
+                    break;
+                    default:
+                        message = "Temperature could not be determined.";
+                }
             }
-        }
     </script>
     
 </body>
